@@ -1,0 +1,10 @@
+<%- include('header') -%>
+<div class="text-center text-white  center-div mt-5" id="login">
+    <div class="container w-25 border py-5 mt-5">
+        <h3>Welcome to <%= name ? name:'' %>'s page..!</h3>
+        <form action="/logout?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-success rounded-pill mt-2">Log Out</button>
+        </form>
+    </div>
+</div>
+<%- include('footer') -%>

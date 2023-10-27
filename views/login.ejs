@@ -1,0 +1,27 @@
+<%- include('header') -%>
+    <div class="text-center text-white center-div" id="login">
+        <div class="container w-25 border rounded-pill border-dark py-5">
+            <div class="title pb-5">
+                <h2 class="font-weight-bold ">Login</h2>
+                <span>Log-in for the existing user</span>
+                <% if (messages.error) { %>
+                    <div class="alert alert-danger text-center">
+                        <%= messages.error %>
+                    </div>
+                <% } %>
+            </div>
+            <form action="/login" method="POST"class="pt-3">
+                <div class="form-group">
+                    <label style="float: left;" for="email">Email</label>
+                    <input type="email" class="form-control mb-2" oninput="validateEmail()" placeholder="email" name="email">
+                    <span id="emailms" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="float: left;" for="password">Password</label>
+                    <input type="password" class="form-control mt-2" placeholder="password" name="password" oninput="validatePassword()">
+                    <span id="passwordms" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-success rounded-pill mt-2" id="loginbtn">Login</button>
+            </form><br>
+            <a href="/register">Register</a>
+<%- include('footer') -%>
